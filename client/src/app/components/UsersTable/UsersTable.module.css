@@ -1,0 +1,24 @@
+.userContainerTitle{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 28px 32px;
+    border: 1px solid #e9ecef;
+    background-color: aliceblue;
+    margin: 0 0 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+}
+
+.userContainerTitle:last-child{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+.userContainerTitle .userTitle:nth-child(1){
+    width: 6%;
+}
+.userContainerTitle .userTitle:nth-child(2){
+    width: 30%;
+}

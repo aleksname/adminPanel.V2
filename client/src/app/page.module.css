@@ -1,0 +1,60 @@
+.wrapper{
+    background-image: url('../../public/bgMainPage.png');
+    padding-bottom: 100px;
+}
+.containerContent{
+    /* max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px 10px; */
+    display: flex;
+    justify-content: center;
+}
+.containerImage{
+    display: flex;
+    justify-content: center;
+}
+.image{
+    width: 500px;
+    height: 300px;
+    margin-bottom: 30px;
+}
+.subTitle{
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-size: 40px;
+}
+.containerContent{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.nav{
+
+}
+.navList{
+    list-style: none;
+   
+}
+.navItem{
+    text-decoration: none;
+    color: black;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+}
+.navItemEl{
+    padding: 24px 84px;
+    border-radius: 20px;
+    background-color: #FFD18B;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+   
+}

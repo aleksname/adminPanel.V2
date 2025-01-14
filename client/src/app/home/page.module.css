@@ -1,0 +1,74 @@
+.wrapper{
+    background-image: url('../../../public/bgMainPage.png');
+    padding-bottom: 100px;
+}
+.navigationItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+.navLink{
+    margin-right: 15px;
+}
+.navLinkActive{
+    background-color: #e9ecef;
+}
+.navLinkActive,
+.navLink{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 14px 67px;
+    border: 1px solid #e9ecef;
+}
+.userContainerContent{
+    border: 2px solid rgba(0, 0, 0, 0.462);
+    padding: 80px 60px 60px;
+}
+.conteinerTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: monospace;
+    margin-bottom: 40px;
+}
+
+.userDropDownContainer{
+    display: flex;
+    margin-bottom: 40px;
+}
+.userDropWown{
+    border: 1px solid #828a91;
+    padding: 14px 24px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+.userContainerTitle{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 28px 32px;
+    border: 1px solid #e9ecef;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.userContainerTitle .userTitle:nth-child(1){
+    width: 6%;
+}
+.userContainerTitle .userTitle:nth-child(2){
+    width: 30%;
+}
+.userContainerTitle .userTitle:nth-child(5){
+    width: 24px;
+    height: 24px;
+}
+
+
+
