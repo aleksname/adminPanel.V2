@@ -1,0 +1,29 @@
+.DropDownMenu{
+    border: none;
+}
+.dropDownContainer {
+  position: absolute; /* Меню буде позиціонуватись відносно найближчого відносного контейнера */
+  background-color: white; /* Колір фону меню */
+  border: 1px solid #e9ecef; /* Рамка для меню */
+  width: 100%; /* Меню буде шириною як кнопка */
+  max-width: 450px; /* Максимальна ширина меню */
+  z-index: 1000; /* Щоб перекрити інші елементи */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Додає тінь */
+}
+
+.dropDownWrapper {
+  position: relative; /* Встановлюємо відносне позиціонування, щоб меню розташовувалось щодо цього контейнера */
+}
+
+.input{
+    border: none;
+    margin-right: 5px;
+}
+.dropDownItem{
+    border: 1px solid #ccc;
+    display: flex;
+}
+
+.dropDownIconRounded{
+  transform:  rotate(180deg);
+}

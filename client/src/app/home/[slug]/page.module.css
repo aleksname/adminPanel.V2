@@ -2,3 +2,69 @@
     background-image: url('../../../../public/bgMainPage.png');
     padding-bottom: 100px;
 }
+.navigationItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+.navLinkActive{
+    margin-right: 15px;
+}
+.navLinkActive{
+    background-color: #e9ecef;
+}
+.navLinkActive,
+.navLink{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 14px 67px;
+    border: 1px solid #e9ecef;
+}
+.userContainerTitle{
+   border: 2px solid rgba(0, 0, 0, 0.422);
+   padding:  80px;
+   min-height: 100vh;
+}
+.userTitle{
+    display: flex;
+    justify-content: center;
+}
+
+.userTitle,
+.userTitle2{
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: monospace;
+    margin-bottom: 40px;  
+}
+
+.userTitleBlock{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+.createUserContainer{
+    display: flex;
+    justify-content: center;
+}
+.createUser{
+    padding: 15px 25px;
+    border: none;
+    background-color: antiquewhite;
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: 1px solid tomato;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.createUser:hover{
+    transform: scale(1.1);
+    background-color: rgb(233, 219, 201);
+}
+.createUser:active{
+    background-color: rgb(213, 197, 175);
+}

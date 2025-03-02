@@ -1,0 +1,63 @@
+.userEditContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.userTitle2{
+    margin-bottom: 40px;
+}
+.userTitle,
+.userTitle2{
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: monospace;
+    margin-bottom: 40px;  
+}
+
+.userTitleBlock{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+.dropDown{
+    padding: 12px 24px;
+    width: 450px;
+    text-align: left;
+    border: 1px solid #e9ecef;
+    background-color: rgba(255, 255, 255, 0.085);
+    transition: 0.2s;
+    font-size: 18px;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+}
+.dropDown:last-child{
+}
+.dropDown:hover{
+    background-color: #cbced1;
+}
+
+.input{
+    padding: 14px 24px;
+    width: 450px;
+    display: flex;
+    border: 1px solid #e9ecef;
+    transition: 0.3s;
+    font-family: monospace;
+    z-index: 100;
+}
+
+
+.inputUser {
+  width: 100%;
+  padding: 14px 24px;
+  padding-right: 120px; 
+  border: #cbced182 2px solid;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: monospace;
+}

@@ -1,0 +1,64 @@
+.input{
+    padding: 14px 24px;
+    width: 450px;
+    display: flex;
+    border: 1px solid #e9ecef;
+    transition: 0.3s;
+    font-family: monospace;
+    z-index: 100;
+}
+.userDropDownWrapper{
+    background-color: rgba(255, 255, 255, 0);
+    padding: 14px 24px;
+    width: 450px;
+    text-align: left;
+    border: #cbced182 2px solid;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: monospace;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.inputContainer {
+  position: relative;
+  width: 450px; /* або потрібна вам ширина */
+}
+.dropdownContainer {
+    position: relative;
+}
+
+.dropdownList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #cbced1af;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  max-height: 150px; /* обмеження висоти */
+  overflow-y: auto; /* прокрутка, якщо багато користувачів */
+}
+.listUserContainer{
+    display: flex;
+    align-items: center;
+    border: #cbced1af 1px solid;
+    padding: 14px 24px;
+}
+.checkbox{
+    margin-right: 5px;
+    border: 1px solid #cbced182;
+    width: 20px;
+    height: 20px;
+}
+.listUser{
+    list-style: none;
+    margin-bottom: 5px;
+    background-color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+

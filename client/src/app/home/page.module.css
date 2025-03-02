@@ -72,3 +72,56 @@
 
 
 
+.dropDown{
+    padding: 12px 24px;
+    width: 150px;
+    text-align: left;
+    border: 1px solid #e9ecef;
+    background-color: rgba(255, 255, 255, 0.085);
+    transition: 0.2s;
+    font-size: 18px;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.dropDown:hover{
+    background-color: #cbced1;
+}
+
+.resetBTN{
+    background-color: white;
+    border: none;
+    font-family: monospace;
+    font-size: 14px;
+    color: #828a91;
+    cursor: pointer;
+}
+.resetBTN:hover{
+    color: #000;
+}
+.input{
+    padding: 14px 24px;
+    display: flex;
+    border: 1px solid #e9ecef;
+    transition: 0.3s;
+    font-family: monospace;
+    z-index: 100;
+}
+.dropDownWrapper{
+    border: 1px solid #e9ecef;
+    margin-right: 25px;
+
+}
+
+
+.inputUser{
+    padding: 14px 24px;
+    border: #cbced182 2px solid;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: monospace;
+
+}

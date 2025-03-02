@@ -4,6 +4,9 @@ import styles from './page.module.css';
 import Link from 'next/link';
 
 import UsersTable from '../components/UsersTable/UsersTable';
+import DropDownMenu from '../components/UI/DropDownMenu/DropDownMenu';
+
+import {groups} from '../../userList'
 
 export default function page() {
   return (
@@ -18,18 +21,20 @@ export default function page() {
             <div className={styles.conteinerTitle}>Користувачі</div>
             <div className={styles.conteinerSubTitle}></div>
             <div className={styles.userDropDownContainer}>
-              <div className={styles.userDropWown}>Група</div>
-              <div className={styles.userDropWown}>Ім'я</div>
-              <div className={styles.userDropWown}>Статус</div>
+              <DropDownMenu content={groups} className={styles.input} title={'Група'} classNameDropDown={styles.dropDown} dropDownWrapper={styles.dropDownWrapper}  />
+              <DropDownMenu content={groups} className={styles.input} title={"Ім'я"} classNameDropDown={styles.dropDown} dropDownWrapper={styles.dropDownWrapper}  />
+              <DropDownMenu content={groups} className={styles.input} title={"Статус"} classNameDropDown={styles.dropDown} dropDownWrapper={styles.dropDownWrapper}  />
+              <button type="reset" className={styles.resetBTN}>скинути </button>
             </div>
+            
             <div className={styles.userContainerTitle}>
               <div className={styles.userTitle}>Статус</div>
               <div className={styles.userTitle}>Ім'я</div>
               <div className={styles.userTitle}>Країна</div>
-              <div className={styles.userTitle}>Статус</div>
+              <div className={styles.userTitle}>Група</div>
               <div className={styles.userTitle}></div>
            </div>
-             <UsersTable/>
+            <UsersTable />
           </div>
         </div>
       </MainContainer>
