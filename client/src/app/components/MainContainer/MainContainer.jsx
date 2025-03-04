@@ -10,7 +10,7 @@ export default function MainContainer({children,titles}) {
         <Head>
           <meta name="keywords" content={"nextjs,  home page" }></meta>
           <title>{titles}</title>
-          <link rel="icon" href="/logo/favicon.png" type="image/x-icon" />
+          <link rel="icon" href="/public/favicon.png" type="image/x-icon" />
         </Head>
         <div className={styles.container}>
           <div className={styles.title}>
@@ -33,6 +33,12 @@ export default function MainContainer({children,titles}) {
               <li>
                 <Link href="/we-work-in-class" className={styles.navItem}>
                   Працюємо на уроці
+                </Link>
+              </li>
+
+               <li>
+                <Link href="/home-work" className={styles.navItem}>
+                  Надіслати домашнє
                 </Link>
               </li>
             </ul>  

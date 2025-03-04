@@ -7,6 +7,9 @@
     font-family: monospace;
     z-index: 100;
 }
+.inputEl{
+    cursor: pointer;
+}
 .userDropDownWrapper{
     background-color: rgba(255, 255, 255, 0);
     padding: 14px 24px;

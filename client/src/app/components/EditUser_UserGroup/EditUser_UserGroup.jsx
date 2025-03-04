@@ -7,7 +7,8 @@ import Vector from '../../../../public/Vector.svg'
 export default function editUserGroup() {
     const [groups, setGroups] = useState([]);
     const [open, setOpen] = useState(false);
-    
+    const [selectedGroup, setSelectedGroup] = useState()  
+  
     const getGroup = async () => {
     setOpen(!open)
 
@@ -24,6 +25,8 @@ export default function editUserGroup() {
     }
   }
     
+
+
     return (
         <>
            <div className="">
@@ -40,8 +43,11 @@ export default function editUserGroup() {
                          {groups.map((user) => (
                               <div key={user.id} className={styles.listUserContainer}>
                                 <input
-                                  type="checkbox"
-                                  className={styles.checkbox}
+                                  type="radio"
+                                  value={user.id}
+                                  checked={selectedGroup === user.id}
+                                  onChange={() => setSelectedGroup(user.id)}
+                                  className={styles.inputEl}
                                 />
                                 <li className={styles.listUser}>{user.name}</li>
                               </div>
