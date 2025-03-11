@@ -5,18 +5,20 @@ import styles from './page.module.css';
 import Link from 'next/link';
 import EditUser_FindUser from '@/app/components/EditUser/EditUser_FindUser/EditUser_FindUser';
 import EditUser_UserGroup from '@/app/components/EditUser/EditUser_CreateGroup/EditUser_CreateGroup';
-import EditUser_UserInfo from '@/app/components/EditUser/EditUser_UserInfo/EditUser_UserInfo';
+import EditUser_UserInfo from '@/app/components/EditUser_UserGroup/EditUser_UserGroup';
+
+
+import DropDownMenu from '../../components/UI/DropDownMenu/DropDownMenu'
+import {userStatus} from '../../../userStatus'
+
 
 export default function Page() {
-  // Стан для зберігання вибраного користувача та групи
   const [selectedUserId, setSelectedUserId] = useState(null);
   const [selectedGroupId, setSelectedGroupId] = useState(null);
   
-  // Стан для даних користувачів та груп - для прикладу
   const [users, setUsers] = useState([]);
   const [groups, setGroups] = useState([]);
 
-  // Можна завантажити користувачів та групи при завантаженні сторінки
   useEffect(() => {
     async function fetchData() {
       try {
@@ -34,36 +36,39 @@ export default function Page() {
     fetchData();
   }, []);
 
-  // Обробник для кнопки "Створити користувача"
   const handleCreateUser = async () => {
+    console.log(selectedUserId)
+    console.log(selectedGroupId)
     if (!selectedUserId || !selectedGroupId) {
       alert('Будь ласка, виберіть користувача та групу');
       return;
     }
 
-    const data = { user_id: selectedUserId, group_id: selectedGroupId };
-
     try {
-      const response = await fetch('/api/saveUserGroup', {
+      const response = await fetch('/api/createUserGroup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify({
+          userId: selectedUserId,
+          groupId: selectedGroupId
+        })
       });
 
       if (response.ok) {
-        alert('Користувача успішно додано до групи!');
+        const data = await response.json();
+        alert("Користувача успішно додано до групи");
       } else {
         const errorText = await response.text();
-        console.error('Server error:', errorText);
-        alert('Не вдалося зберегти користувача та групу');
+        alert("Виникла помилка: " + errorText);
       }
     } catch (error) {
-      console.error('Request error:', error);
-      alert('Сталася помилка при збереженні');
+      console.error('Помилка запиту:', error);
+      alert('Помилка зв\'язку із сервером');
     }
-  };
+};
+
 
   return (
     <div className={styles.wrapper}>
@@ -77,11 +82,19 @@ export default function Page() {
             <div className={styles.userTitle}>Редагувати профіль</div>
             <div className={styles.userTitleBlock}>
               <EditUser_FindUser users={users} onSelectUser={setSelectedUserId} />
-              <EditUser_UserGroup groups={groups} onSelectGroup={setSelectedGroupId} />
+              <EditUser_UserGroup  />
             </div>
 
             <div className={styles.userTitle2}>Інформація користувача</div>
-            <EditUser_UserInfo />
+            <div className={styles.infoContainer}>
+               <div className="">
+                <div className={styles.userTitleEl}>Статус учня</div>
+                <div className={styles.userTitleBlock} >
+                  <DropDownMenu disabled={ true} content={userStatus} className={styles.input} title={'Статус учня'} classNameDropDown={styles.dropDown} dropDownWrapper={styles.dropDownWrapper}  />
+                </div>
+              </div>
+              <EditUser_UserInfo groups={groups} onSelectedGroup={setSelectedGroupId} />
+              </div>
             <div className={styles.createUserContainer}>
               <button type="button" className={styles.createUser} onClick={handleCreateUser}>
                 Створити користувача

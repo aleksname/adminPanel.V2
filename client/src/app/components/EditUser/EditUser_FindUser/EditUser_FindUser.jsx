@@ -13,8 +13,6 @@ export default function EditUser_FindUser({ users, onSelectUser }) {
       const response = await fetch('/api/getUser', { method: 'GET' });
       if (!response.ok) throw new Error('Failed to fetch users');
       const data = await response.json();
-      // Якщо користувачі передаються через пропси, можна оновлювати стан батьківського компонента.
-      // Але в даному прикладі припускаємо, що users завантажуються десь і передаються як props.
     } catch (error) {
       console.error('Error fetching users:', error);
     }
@@ -35,7 +33,7 @@ export default function EditUser_FindUser({ users, onSelectUser }) {
                 <div key={user.id} className={styles.listUserContainer}>
                   <input
                     type="radio"
-                    name="selectedUser"            // Спільне ім'я для всіх радіо кнопок користувачів
+                    name="selectedUser"           
                     value={user.id}
                     onChange={() => onSelectUser(user.id)}
                   />

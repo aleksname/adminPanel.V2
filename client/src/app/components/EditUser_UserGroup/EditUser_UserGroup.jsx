@@ -4,10 +4,9 @@ import styles from './EditUser_UserGroup.module.css'
 import Image from 'next/image';
 import Vector from '../../../../public/Vector.svg'
 
-export default function editUserGroup() {
+export default function editUserGroup({ onSelectedGroup}) {
     const [groups, setGroups] = useState([]);
     const [open, setOpen] = useState(false);
-    const [selectedGroup, setSelectedGroup] = useState()  
   
     const getGroup = async () => {
     setOpen(!open)
@@ -19,7 +18,7 @@ export default function editUserGroup() {
         }
         const data = await response.json()
         setGroups(data)
-        console.log(data)
+        // console.log(data)
     } catch (err) {
       console.log('error fetch group',err)
     }
@@ -45,8 +44,7 @@ export default function editUserGroup() {
                                 <input
                                   type="radio"
                                   value={user.id}
-                                  checked={selectedGroup === user.id}
-                                  onChange={() => setSelectedGroup(user.id)}
+                                  onChange={() => onSelectedGroup(user.id)}
                                   className={styles.inputEl}
                                 />
                                 <li className={styles.listUser}>{user.name}</li>

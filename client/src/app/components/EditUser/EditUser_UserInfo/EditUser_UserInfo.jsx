@@ -19,13 +19,7 @@ export default function EditUser_UserInfo() {
                   <DropDownMenu content={userCoutry} className={styles.input} title={'Знайди учня'} classNameDropDown={styles.dropDown} dropDownWrapper={styles.dropDownWrapper}  />
                 </div>
               </div>
-              <div className="">
-                <div className={styles.userTitleEl}>Статус учня</div>
-                <div className={styles.userTitleBlock}>
-                  <DropDownMenu content={userStatus} className={styles.input} title={'Статус учня'} classNameDropDown={styles.dropDown} dropDownWrapper={styles.dropDownWrapper}  />
-                </div>
-                <EditUserGroup/>
-              </div>
+           
             </div>
     </>
   )
