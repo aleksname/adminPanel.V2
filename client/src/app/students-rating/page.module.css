@@ -97,6 +97,18 @@
 .studentProfile{
     background-color: rgba(153, 61, 76, 0.725);
 }
+.containerStudendPrifile:nth-child(6)
+.studentProfile{
+    background-color: rgba(37, 109, 89, 0.725);
+}
+.containerStudendPrifile:nth-child(7)
+.studentProfile{
+    background-color: rgba(20, 179, 36, 0.725);
+}
+.containerStudendPrifile:nth-child(8)
+.studentProfile{
+    background-color: rgba(194, 76, 44, 0.725);
+}
 .buttonGroup{
     display: flex;
     justify-content: center;

@@ -40,6 +40,14 @@ export default function Home() {
                     </div>
                   </Link>
                 </li>
+
+                <li>
+                  <Link href={'/home-work'} className={styles.navItem}>
+                    <div className={styles.navItemEl}>
+                      Надіслати домашнє 
+                    </div>
+                  </Link>
+                </li>
               </ul>  
             </nav>
           </div>
