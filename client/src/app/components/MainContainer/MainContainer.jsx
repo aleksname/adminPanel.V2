@@ -11,6 +11,7 @@ export default function MainContainer({children,titles}) {
           <meta name="keywords" content={"nextjs,  home page" }></meta>
           <title>{titles}</title>
           <link rel="icon" href="/public/favicon.png" type="image/x-icon" />
+          <meta name="verify-admitad" content="3c5d52c3ef" />
         </Head>
         <div className={styles.container}>
           <div className={styles.title}>

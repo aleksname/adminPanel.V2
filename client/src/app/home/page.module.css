@@ -25,11 +25,13 @@
 .userContainerContent{
     border: 2px solid rgba(0, 0, 0, 0.462);
     padding: 80px 60px 60px;
+    min-height: 100vh;
 }
 .conteinerTitle{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 24px;
     font-weight: 600;
     font-family: monospace;
@@ -39,6 +41,15 @@
 .userDropDownContainer{
     display: flex;
     margin-bottom: 40px;
+}
+.userInput{
+    border: 1px solid rgba(128, 128, 128, 0.321);
+    padding: 15px 10px;
+    width: 350px;
+    box-sizing: border-box;
+    margin-right: 15px;
+    border-radius: 4px;
+    outline: none;
 }
 .userDropWown{
     border: 1px solid #828a91;
@@ -57,13 +68,20 @@
     font-weight: 600;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    text-align: center;
 }
 
 .userContainerTitle .userTitle:nth-child(1){
-    width: 6%;
+    width: 25%;
 }
 .userContainerTitle .userTitle:nth-child(2){
-    width: 30%;
+    width: 25%;
+}
+.userContainerTitle .userTitle:nth-child(3){
+    width: 25%;
+}
+.userContainerTitle .userTitle:nth-child(4){
+    width: 25%;
 }
 .userContainerTitle .userTitle:nth-child(5){
     width: 24px;
