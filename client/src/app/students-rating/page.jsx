@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './page.module.css';
 import MainContainer from './../components/MainContainer/MainContainer';
 import { groups } from '../../userList';
@@ -19,6 +19,20 @@ export default function WeWorkInClass() {
     // fetch('/some-api', { method: form.method, body: formData });
   }
 
+  const [user, setUser] = useState([])
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch('/api/finalUserGroups')
+        const userData = await res.json()
+        setUser(userData)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    fetchData()
+  }, [])
   return (
     <div className={styles.wrapper}>
       <MainContainer>
