@@ -10,7 +10,7 @@ const pool = new Pool({
 
 export async function GET() {
     try {
-        const result = await pool.query('SELECT user_name, group_name FROM user_groups');
+        const result = await pool.query('SELECT id,user_name, group_name FROM user_groups');
         // console.log(result.rows);
         return new Response(JSON.stringify(result.rows), {
             status: 200,

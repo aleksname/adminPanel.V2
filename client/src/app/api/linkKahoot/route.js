@@ -8,36 +8,18 @@ const pool = new Pool({
     port: 5432,
 });
 
-export async function POST(request) {
-  try {
+export async function PUT(request) {
+  try { 
     const body = await request.json();
     const { url } = body;
 
-    if (!url) {
-      return new Response(
-        JSON.stringify({ message: 'Посилання не передано' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
-      );
-    }
-
-    const queryText = `
-      INSERT INTO global_Links (id, url)
-      VALUES (1, $1)
-      ON CONFLICT (id) DO UPDATE 
-      SET url = EXCLUDED.url,
-          created_at = CURRENT_TIMESTAMP;
-    `;
-    await pool.query(queryText, [url]);
-
-    return new Response(
-      JSON.stringify({ message: 'Посилання збережено', url }),
-      { status: 200, headers: { 'Content-Type': 'application/json' } }
-    );
-  } catch (error) {
-    console.error('Помилка при оновленні посилання:', error);
-    return new Response(
-      JSON.stringify({ message: 'Помилка сервера' }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
-    );
+    const result = await pool.query('UPDATE global_links SET url = $1', [url])
+      return new Response(JSON.stringify({ message: 'Посилання оновлено', rows: result.rows }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+  catch (err) {
+    console.error(err)
   }
 }

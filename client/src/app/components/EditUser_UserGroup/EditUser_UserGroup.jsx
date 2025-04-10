@@ -44,7 +44,7 @@ export default function editUserGroup({ onSelectedGroup}) {
                                 <input
                                   type="radio"
                                   value={user.id}
-                                  onChange={() => onSelectedGroup(user.id)}
+                                  onChange={() => onSelectedGroup(user.name)}
                                   className={styles.inputEl}
                                 />
                                 <li className={styles.listUser}>{user.name}</li>

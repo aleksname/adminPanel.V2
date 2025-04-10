@@ -50,10 +50,11 @@ export default function Page() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          userId: selectedUserId,
-          groupId: selectedGroupId
-        })
+        // body: JSON.stringify({
+        //   userId: selectedUserId,
+        //   groupId: selectedGroupId
+        // })
+        body: JSON.stringify({user_name: selectedUserId, group_name: selectedGroupId})
       });
 
       if (response.ok) {

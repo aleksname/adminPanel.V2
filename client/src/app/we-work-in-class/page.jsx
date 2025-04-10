@@ -11,7 +11,7 @@ export default function WeWorkInClass() {
     e.preventDefault();
     try {
       const response = await fetch('/api/linkKahoot', {
-        method: 'POST',
+        method: 'PUT', // put == update, провтик
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: link }),
       });
@@ -19,7 +19,6 @@ export default function WeWorkInClass() {
       alert(data.message);
       console.log(data);
     } catch (error) {
-      console.error("Помилка при надсиланні:", error);
       alert("Помилка при надсиланні посилання");
     }
   };
