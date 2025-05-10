@@ -5,18 +5,68 @@ import MainContainer from './../components/MainContainer/MainContainer';
 import { groups } from '../../userList';
 
 export default function WeWorkInClass() {
-  function handleSubmit(e) {
-    e.preventDefault();
+  function parseFormJson(formJson) {
+  const userDataMap = {};
 
-    const form = e.target;
-    const formData = new FormData(form);
+  // Проходимось по всіх ключах форми
+  for (const [key, value] of Object.entries(formJson)) {
+    const parts = key.split('_'); // ['user', 'active', 'Anna']
+    if (parts.length < 3) continue;
 
-    const formJson = Object.fromEntries(formData.entries());
+    const type = parts[1]; // active / attentiveness / kahoot
+    const user_name = parts.slice(2).join('_'); // підтримує складні імена з "_"
 
-    console.log(formJson);
+    // Якщо ще не існує запису для користувача — створюємо
+    if (!userDataMap[user_name]) {
+      userDataMap[user_name] = {
+        user_name,
+        activity_score: 0,
+        attention_score: 0,
+        kahoot_score: 0
+      };
+    }
 
-    // fetch('/some-api', { method: form.method, body: formData });
+    // Додаємо відповідне поле
+    if (type === 'active') {
+      userDataMap[user_name].activity_score = parseInt(value);
+    } else if (type === 'attentiveness') {
+      userDataMap[user_name].attention_score = parseInt(value);
+    } else if (type === 'kahoot') {
+      userDataMap[user_name].kahoot_score = parseInt(value);
+    }
   }
+
+  // Конвертуємо з об'єкта в масив
+  return Object.values(userDataMap);
+}
+
+
+
+  function handleSubmit(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+  const formJson = Object.fromEntries(formData.entries());
+
+  const parsedGrades = parseFormJson(formJson);
+
+  const body = {
+    lesson_id: 1, // або динамічно — в залежності від обраного уроку
+    grades: parsedGrades
+  };
+
+  fetch('/api/submitGrades', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  }).then(res => {
+    if (res.ok) alert('Оцінки збережено ✅');
+  }).catch(err => {
+    console.error('Помилка при надсиланні:', err);
+  });
+}
+
   
   const [user, setUser] = useState([])
   const [group, setGroup] = useState([])
